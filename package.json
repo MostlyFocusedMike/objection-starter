@@ -11,13 +11,13 @@
   "scripts": {
     "start": "docker-compose up -d",
     "in:db": "docker-compose exec db psql boiler_room root",
-    "migrate": "docker-compose exec core npx knex migrate:latest",
-    "rollback": "docker-compose exec core npx knex migrate:rollback",
-    "seed": "docker-compose exec core npx knex seed:run",
+    "migrate": "docker-compose exec node_server npx knex migrate:latest",
+    "rollback": "docker-compose exec node_server npx knex migrate:rollback",
+    "seed": "docker-compose exec node_server npx knex seed:run",
     "lint": "eslint ."
   },
   "dependencies": {
-    "dotenv": "8.x.x",
+    "knex": "^0.19.1",
     "objection": "^1.6.9",
     "pg": "^7.12.0"
   },
