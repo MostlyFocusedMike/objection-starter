@@ -1,10 +1,8 @@
 const Path = require('path');
 const { Model } = require('objection');
-const knex = require('../knex');
+const Base = require('../base');
 
-Model.knex(knex); // Give the knex object to objection.
-
-class ObjectionBoiler extends Model {
+class ObjectionBoiler extends Base {
     static get tableName() {
         return 'tags';
     }
