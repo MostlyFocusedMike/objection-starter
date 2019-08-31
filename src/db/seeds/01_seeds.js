@@ -50,8 +50,8 @@ exports.seed = async (knex) => {
     await article3.addRelations('tags', jsTag);
     const articles = await Article.all();
 
-    const comment = await Comment.findBy('content', 'cool article');
-    comment.addRelations('article', article3);
+    // const comment = await Comment.findBy('content', 'cool article');
+    // comment.addRelations('article', article3);
     // see what was made
     for (let i = 0; i < articles.length; i++) {
         console.log('\narticle: ', articles[i]);
